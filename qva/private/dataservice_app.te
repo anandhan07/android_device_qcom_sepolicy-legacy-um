@@ -33,3 +33,6 @@ allow vendor_dataservice_app vendor_dpmd_data_file:dir rw_dir_perms;
 allow vendor_dataservice_app vendor_dpmd_data_file:file create_file_perms;
 unix_socket_connect(vendor_dataservice_app,vendor_dpmd,vendor_dpmd);
 set_prop(vendor_dataservice_app, vendor_persist_dpm_prop)
+
+allow vendor_dataservice_app system_data_file:dir search;
+allow vendor_dataservice_app user_profile_root_file:dir search;
