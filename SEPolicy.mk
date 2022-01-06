@@ -1,5 +1,6 @@
 # Board specific SELinux policy variable definitions
-SEPOLICY_PATH:= device/qcom/sepolicy-legacy-um
+ifeq ($(call is-vendor-board-platform,QCOM),true)
+SEPOLICY_PATH:= device/qcom/sepolicy-legacy
 SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS := \
     $(SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS) \
     $(SEPOLICY_PATH)/generic/public \
@@ -47,5 +48,4 @@ ifneq (,$(filter sdm660 msm8937 msm8953 msm8996 msm8998, $(TARGET_BOARD_PLATFORM
     BOARD_VENDOR_SEPOLICY_DIRS += $(SEPOLICY_PATH)/legacy/vendor/test
     endif
 endif
-
--include device/custom/sepolicy/qcom/sepolicy.mk
+endif
