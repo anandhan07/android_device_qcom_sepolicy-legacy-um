@@ -181,7 +181,9 @@ vendor_restricted_prop(vendor_adsprpc_prop);
 #qvr property
 vendor_restricted_prop(vendor_qvr_prop);
 
-#capabilityconfigstore hal (CCHAL)
+#capabilityconfigstore and dcvs (CCHAL)
 vendor_internal_prop(vendor_cap_configstore_dbg_prop);
-
 vendor_internal_prop(vendor_dcvs_prop);
+
+# Wifi version recorder
+vendor_restricted_prop(vendor_wifi_version);
